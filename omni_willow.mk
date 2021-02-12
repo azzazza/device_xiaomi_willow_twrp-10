@@ -30,16 +30,13 @@ PRODUCT_MANUFACTURER := Xiaomi
 TARGET_VENDOR_PRODUCT_NAME := willow
 TARGET_VENDOR_DEVICE_NAME := willow
 
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE=willow \
+    BUILD_PRODUCT=willow \
+    PRODUCT_NAME=willow
 
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
-    ro.product.device \
-    ro.product.name \
-    ro.build.product \
-    ro.bootimage.build.date.utc \
-    ro.build.date.utc
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2099-12-311
 
 PRODUCT_PACKAGES += \
     qcom_decrypt \
